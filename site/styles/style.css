@@ -16,8 +16,12 @@ body {
 }
 
 #container {
-    height: 100vh;
+    width: calc(100vw - 32px); /* 16px + 16px */
+    height: calc(100vh - 32px);
     border: 3px solid var(--primary-color);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 header {
@@ -53,15 +57,19 @@ main {
 }
 
 .crop {
-    width: 400px;
     height: 400px;
     overflow: hidden;
     position: relative;
+    gap: 48px;
+    flex-wrap: wrap;     /* crucial */
+    width: min(400px, 45vw); /* nunca passa de 400, encolhe no mobile */
+    aspect-ratio: 1 / 1;     /* mantém quadrado sem depender de height fixa */
 }
 
 .crop img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     /* foca no topo da imagem */
     object-position: top;
