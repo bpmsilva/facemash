@@ -16,7 +16,6 @@ body {
 }
 
 #container {
-    /* TODO: fix extra spacing later */
     height: 100vh;
     border: 3px solid var(--primary-color);
 }
@@ -36,12 +35,13 @@ main {
     text-align: center;
 }
 
-main :nth-child(1) {
-    font-size: x-large;
+#intro {
+    font-size: 24px;
 }
 
-main :nth-child(2) {
+#question {
     font-size: 48px;
+    margin-bottom: 24px;
 }
 
 #content {
@@ -65,4 +65,19 @@ main :nth-child(2) {
     display: block;
     /* foca no topo da imagem */
     object-position: top;
+}
+
+@media (max-width: 992px) {
+
+    #intro {
+        display: none;
+    }
+
+    #question {
+        font-size: xx-large
+    }
+
+    #or {
+        font-size: x-large;
+    }
 }
